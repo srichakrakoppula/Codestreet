@@ -123,21 +123,6 @@ CREATE TABLE `user_details` (
 -- --------------------------------------------------------
 
 --
--- Stand-in structure for view `user_test_records_view`
--- (See below for the actual view)
---
-CREATE TABLE `user_test_records_view` (
-);
-
--- --------------------------------------------------------
-
---
--- Structure for view `user_test_records_view`
---
-DROP TABLE IF EXISTS `user_test_records_view`;
--- in use(#1142 - SHOW VIEW command denied to user 'srichakra'@'localhost' for table 'user_test_records_view')
-
---
 -- Indexes for dumped tables
 --
 
