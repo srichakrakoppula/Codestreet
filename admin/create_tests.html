@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Admin::Create Tests</title>
+
+<link href="../css/style_admin.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../js/jquery-latest.min.js"></script>
+</head>
+
+<body>
+<h1>Create Test</h1>
+<p><strong>Note:</strong> All Fields are required.</p>
+<div id="container">
+<form id="createTest" method="post" action="create_tests.php">
+<label for="testname"> Test name:
+	<input name="testname" id="testname" type="text" maxlength="40" placeholder="Test name" pattern="[A-Za-z0-9]{3,}" required/>
+</label><br><br>
+<label for="no_of_ques"> No. of Questions:
+	<input name="no_of_ques" id="no_of_ques" type="number" maxlength="10" placeholder="No. of Questions" required/>
+</label><br/><br/>
+<label for="start_date"> Start Date:
+	<input name="start_date" type="date" placeholder="Start Date" required/>
+</label><br><br>
+<label for="start_time"> Start Time:
+	<input name="start_time" type="time" placeholder="Start Time" required/>
+</label><br/><br/>
+<label for="duration"> Duration:
+	<input name="duration" type="number" placeholder="Duration in mins" required/>
+</label><br/><br/>
+<label for="get_q_titles">
+	<input name="get_q_titles" type="button" value="Get Questions" onClick="fillQtitles()">
+</label><br><br>
+<div id="q_select_container"></div>
+<br>
+<input type="submit" name="submit" value="Submit"> 
+</form>
+
+<script>
+function fillQtitles(){
+	$('#q_select_container').empty();
+	$('#q_select_container').append("Loading...");
+	$.ajax({
+		type:"POST",
+		url:"fetch.php?type=q_titles",
+		contentType:"application/json; charset=utf-8",
+		dataType:"json",
+		success: function(data){
+			$('#q_select_container').empty();
+			
+			$.each(data,function(i,item){
+				$('#q_select_container').append("<input type='checkbox' name='q_title[]' value='"+i+"'>"+data[i]+"<br/>");	
+			});
+		},
+		complete: function(){
+			
+		}
+	});
+}
+
+$(document).ready(function(){
+    $("form").submit(function(){
+        var no_of_ques = $('#no_of_ques').val();
+		var checked = $('input[name^=q_title]:checked').length;
+		 if (checked != no_of_ques) {
+        	alert("Please select "+no_of_ques+" question(s).");
+			event.preventDefault();
+    	}
+    });
+});
+</script>
+</body>
+</html>

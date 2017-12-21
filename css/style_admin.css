@@ -1,0 +1,43 @@
+@charset "utf-8";
+#container {
+	border: thin solid #888888;
+	min-width: 500px;
+	min-height: 400px;
+	text-align:center;
+	padding: 20px;
+}
+#container ul{
+	list-style-type:none;	
+}
+
+#createTest{
+	text-align:center;
+	display:inline;	
+}
+#question{
+	min-height:200px;	
+}
+#question,#input_desc,#output_desc,#constraints{
+	min-width:60%;
+	height:auto;
+	resize:vertical;
+}
+#input_desc,#output_desc,#constraints{
+	min-height: 70px;	
+}
+#ex_input,#ex_output{
+	min-width:29.5%;
+	height:auto;
+	min-height:100px;
+	resize:vertical;	
+}#tc_container {
+	width:100%;
+}
+.inputstream,.outputstream{
+	resize:vertical;
+	width:29.5%;
+	min-height:100px;
+}
+#q_select_container {
+	text-align:center;
+}

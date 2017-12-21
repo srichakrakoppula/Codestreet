@@ -1,0 +1,58 @@
+<div>
+    <h2 style="text-align: center">User Performance Record</h2>
+
+    <div id="container" class="oj-form-layout">
+        <div class="oj-form">
+            <div class="oj-flex">  
+                <div class="oj-flex-item">
+                    
+                    <select id="column_select" 
+                            data-bind="ojComponent: {component: 'ojSelect',
+                                                    value: searchColumn,
+                                                    rootAttributes: {style:'max-width:10em'}}">
+                        <option value="Name">Name</option>
+                        <option value="Testname">Test Name</option>
+                        <option value="QuestionTitle">Question Title</option>
+                    </select>
+                    <input id="inputSearch" placeholder="Search"
+                    data-bind="ojComponent: {
+                      component: 'ojInputSearch',
+                      value: keyword,
+                      options: tags,
+                      optionChange: searchChangeHandler,
+                      rootAttributes: {style:'max-width: 20em'}}">
+
+                    <datalist id="searchColumns">
+                        <option value="Name">Name</option>
+                        <option value="Testname">Test Name</option>
+                        <option value="QuestionTitle">Question Title</option>
+                    </datalist>
+                    <br><br>
+                </div>
+            </div>
+        </div>
+        <table id="table_main" summary="Report" aria-label="User Test Records"
+               data-bind="ojComponent: {component: 'ojTable', 
+                                data: pagingdatasource,
+                                optionChange: currentRowListener,
+                                columnsDefault: {sortable: 'enabled'}, 
+                                columns: [{headerText: 'Name', 
+                                           field: 'name'},
+                                          {headerText: 'Test ', 
+                                           field: 'testname'},
+                                          {headerText: 'Question', 
+                                           field: 'title'},
+                                          {headerText: 'Score', 
+                                           field: 'score'},
+                                          {headerText: 'Time', 
+                                           field: 'time'},
+                                          {headerText: 'Space', 
+                                           field: 'space'}
+                                   ]}">
+        </table>
+        
+        <div id="paging" data-bind="ojComponent: {component: 'ojPagingControl', data: pagingdatasource, pageSize: 15}"></div>
+
+    </div>
+</div>
+

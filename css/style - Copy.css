@@ -1,0 +1,186 @@
+@charset "utf-8";
+
+/******************************************************
+**************CSS Reset begin**************************
+*******************************************************/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/******************************************************
+**************CSS Reset end****************************
+*******************************************************/
+
+body{
+	
+	align-items:baseline;
+	margin-left:20px;
+	margin-right:20px;
+	margin-bottom:5px;
+	margin-top: 5px;
+	}
+#wrapper #head_logo {
+	width: 940px;
+	height: 100px;
+	display: inline;
+}
+#wrapper {
+	width: 940px;
+}
+
+/*#reg_login ul li {
+	list-style: none;
+	display: inline;
+}*/
+
+
+#nav_bar ul{
+	/*background-color: #000;*/
+    list-style-type: none;
+	position: static;
+	display: inline;
+	}
+/*#wrapper #nav_bar ul li{
+	list-style:none;
+	display:inline;
+	font-size: 1.2em;
+    line-height: 40px;
+    height: 40px;
+	padding-left: 40px;
+	padding-right: 40px;
+}*/
+#nav_bar a{
+	width: 20%;
+	display: block;
+	float: left;
+	text-align: center;
+	background-color: #4D4D4D;
+	color: #FFFFFF;
+	text-transform: uppercase;
+	padding-top: 6px;
+	padding-right: 0px;
+	padding-bottom: 6px;
+	padding-left: 0px;
+}
+a {
+	text-decoration: none;
+	font-weight: bold;
+}
+a:link {
+	color: #FF6600;
+}
+a:visited {
+	color: #FF944C;
+}
+a:hover, a:active, a:focus {
+	color: #7F3300;
+	text-decoration: underline;
+}
+#nav_bar{
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 40px;
+}
+#nav_bar a:hover, #nav_bar a:active, #nav_bar a:focus, #nav_bar a.thispage {
+	text-decoration: none;
+	color: #43A6CB;
+}
+/*End of Header and Navigation bar(common to all pages)*/
+#ide form #solution {
+	width:760px;
+	height:320px;
+	resize: none;
+	overflow-y: scroll;
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+	font-style: normal;
+	font-variant: normal;
+	margin-left:50px;
+	margin-top: 20px;
+	margin-right:130px;
+	
+	/*have to reset appearance properties*/
+	}
+#ide form #stdin {
+	width:300px;
+	height:100px;
+	resize: none;
+	overflow-y: scroll;
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+	font-style: normal;
+	font-variant: normal;
+	margin-left:50px;
+	margin-top: 20px;
+	margin-right:10px;
+	display:none;
+
+	/*have to reset appearance properties*/
+	}
+#ide form select {
+	margin-left:100px;
+	margin-top: 15px;
+}
+#ide form #bool_stdin {
+	margin-left:200px;
+	margin-top: 15px;
+}
+#ide form #submit {
+	margin-left:200px;
+	margin-top: 15px;
+}
+#ide form #error_msg {
+	width:760px;
+	height:100px;
+	resize: none;
+	overflow-y: scroll;
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+	font-style: normal;
+	font-variant: normal;
+	margin-left:50px;
+	margin-top: 20px;
+	margin-right: 130px;
+	border-style:dotted;
+	border-color:#000000;
+	border-width:thin;
+	display:inline;
+}

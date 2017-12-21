@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Admin::Create Questions</title>
+<link href="../css/style_admin.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../js/jquery-latest.min.js"></script>
+</head>
+
+<body>
+<h1>Create Question</h1>
+<p><strong>Note:</strong> All Fields are required.</p>
+<div id="container">
+  <form method="post" action="create_ques.php">
+    <input type="text" name="title" id="title" maxlength="100" placeholder="Title here" required>
+    <br/>
+    <br/>
+    <textarea name="question" id="question" placeholder="Enter Question here" required></textarea>
+    <textarea name="input_desc" id="input_desc" placeholder="Enter Input description here" required></textarea>
+    <textarea name="output_desc" id="output_desc" placeholder="Enter Output description here" required></textarea>
+    <textarea name="constraints" id="constraints" placeholder="Enter each constraint in a single line" required></textarea>
+    <br>
+    <textarea name="ex_input" id="ex_input" placeholder="Example Input" required></textarea>
+    <textarea name="ex_output" id="ex_output" placeholder="Corresponding Output" required></textarea>
+    <br>
+    <input type="number" id="no_of_tcs" name="no_of_tcs" placeholder="No. of Testcases" onKeyUp="edit_tcs()" onBlur="edit_tcs()" oninput="edit_tcs()" required>
+    <div id="tc_container"></div><hr>
+    <input type="submit" name="submit" value="Submit"/>
+  </form>
+</div>
+<script>
+$(document).ready(function() {
+    $("#tc_container").hide();
+});
+function edit_tcs(){
+	$("#tc_container").show();
+	$("#tc_container").html("Loading...");
+	var num = $('#no_of_tcs').val();
+	var data="";
+	for(var i=1;i<=num;i++){
+		data+='<h3>Testcase'+i+':</h3><br/><textarea name="in_'+i+'" class="inputstream" placeholder="Input data here" required></textarea><textarea name="out_'+i+'" class="outputstream" placeholder="Corresponding output" required></textarea>';
+	}
+	$("#tc_container").html(data);
+	//$("#tc_container").show();
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+
+
+<div id="container" class="oj-form-layout">
+    <h2 style="text-align: center">Reschedule Tests</h2>
+    <div class="oj-flex">  
+        <div class="oj-flex-item">
+            <table id="table2" summary="Tests List" aria-label="List of Tests"
+                   data-bind="ojComponent: {component: 'ojTable', 
+                                data: datasource, 
+                                columnsDefault: {sortable: 'none'}, 
+                                columns: [{headerText: 'Test Name', 
+                                           field: 'testname'},
+                                          {headerText: 'No of Questions', 
+                                           field: 'no_of_ques'},
+                                          {headerText: 'Start Date', 
+                                           field: 'start_date'},
+                                          {headerText: 'Start Time', 
+                                           field: 'start_time'},
+                                          {headerText: 'Duration(in mins)', 
+                                           field: 'duration'},
+                                          {headerText: 'Active?', 
+                                           field: 'active'}],
+                                rowTemplate: 'row_tmpl'
+                               }">
+            </table>
+            <script type="text/html" id="row_tmpl">
+                <tr>
+                    <td>
+                        <input  
+                            name="testname"
+                            type="text"
+                            data-bind="ojComponent: {component: 'ojInputText', 
+                                  value: testname}"/>
+                    </td>
+                    <td data-bind="text: no_of_ques" style="text-align: center">
+                    </td>
+                    <td>
+                        <input name="date" data-bind="ojComponent: {component: 'ojInputDate', 
+            value: start_date,
+            rootAttributes: {style:'max-width:10em'}}"/>
+                    </td>
+                    <td>
+                        <input name="time"
+                               data-bind="ojComponent: {component: 'ojInputTime', 
+                                  value: start_time
+                                  }"/>
+                    </td>
+                    <td>
+                        <input name="duration"
+                               data-bind="ojComponent: {
+        component: 'ojInputNumber', 
+        max:14400,
+        min:10, 
+        step:5, 
+        value:duration}"/>
+                    </td>
+                    <td>
+                        <select name="activeSelect" data-bind="ojComponent: {component: 'ojSelect',
+                                                    value: active,
+                                                    }">
+                            <option value="2">Yes</option>
+                            <option value="1">No</option>
+
+                        </select>
+                    </td>
+                </tr>
+                </script>
+        </div>
+    </div>
+    <div class="oj-flex">  
+        <div class="oj-flex-item">
+            <input id="submit" style="margin-top: 30px" type="button"
+                   data-bind="click: updateTests, 
+        ojComponent: {component: 'ojButton', label: 'Update'}"/>
+        </div>
+    </div>
+</div>
