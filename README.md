@@ -7,12 +7,12 @@ This problem gave us a thought to design something that would automate the above
 This very need led to the creation of CodeStreet that would ease the process of conducting programming competitions.
 
 Some of the advantages of CodeStreet
- Independent Online Compiler
- Results include the Time and Space calculations.
- Used ACE editor that would work as an I.D.E.
- Manages load on the system by auto-terminating the indefinitely waiting processes(that might have been created by users intentionally/unintentionally.
- Customizable code editor theme.
- Simplified Test creation experience.
+1. Independent Online Compiler
+2. Results include the Time and Space calculations.
+3. Used ACE editor that would work as an I.D.E.
+4. Manages load on the system by auto-terminating the indefinitely waiting processes(that might have been created by users intentionally/unintentionally.
+5. Customizable code editor theme.
+6. Simplified Test creation experience.
 
 -------------------------------------------------------------------------------------------------------------------------------------------
 Scripts to create database and tables.
